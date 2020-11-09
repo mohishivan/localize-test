@@ -4,17 +4,16 @@ import { AddLanguageAttemptAction, AddLanguageAttemptPayload, LanguageState,Lang
 import * as constants from "./constants";
 
 const list = [
-	{ name: "Latvian", code: "LT" },
-	{ name: "Estonian", code: "E" },
-	{ name: "Chinese", code: "" },
-	{ name: "Spanish", code: "" },
-	{ name: "English", code: "" },
-	{ name: "Hindi", code: "" },
-	{ name: "Arabic", code: "" },
-	{ name: "Portuguese", code: "" },
-	{ name: "Bengali", code: "" },
-	{ name: "Russian", code: "" },
-	{ name: "French", code: "" },
+	{ name: "Latvian", code: "lva" },
+	{ name: "Estonian", code: "est" },
+	{ name: "Chinese", code: "chn" },
+	{ name: "Spanish", code: "esp" },
+	{ name: "Russian", code: "rus" },
+	{ name: "English", code: "gbr" },
+	{ name: "Hindi", code: "ind" },
+	{ name: "Arabic", code: "egy" },
+	{ name: "Portuguese", code: "prt" },
+	{ name: "French", code: "fra" },
 ];
 
 const getLanguageList = () : LanguageListItem[] =>

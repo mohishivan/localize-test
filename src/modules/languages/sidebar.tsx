@@ -22,7 +22,7 @@ const Container = Styled.div`
 
 const Title = Styled.h1`
 	color: #5489DC;
-	font:400 26px Inter;
+	font:400 26px Rubik;
 	border-right:1px solid #CCCCCC;
 `
 

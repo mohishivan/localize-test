@@ -19,8 +19,8 @@ export const LanguagePage = (props: Props) => {
 		<Container>
 			<Buttons>
 				<PrimaryButton> New Project </PrimaryButton>
-				<Button> Expand All </Button>
-				<Button> Collpase All </Button>
+				<Button> Expand all </Button>
+				<Button> Collpase all </Button>
 			</Buttons>
 			<Panel>
 				<SideBar />
@@ -45,14 +45,14 @@ const Panel = Styled.div`
 	flex-grow:1;
 `
 const Buttons = Styled.div`
-flex-basis:100%;
-height:40px;
-display:flex;
-flex-flow:row wrap;
+	flex-basis:100%;
+	height:40px;
+	display:flex;
+	flex-flow:row wrap;
 `
 
 const Button = Styled.div`
-font:300 16px Arial;
+font:300 15px Rubik;
 color:#5489DC;
 display:flex;
 flex-flow:row wrap;
@@ -61,7 +61,7 @@ align-items:center;
 background-color: white;
 border: 1px solid #5489DC;
 border-radius:4px;
-padding:10px 15px;
+padding:7px 15px;
 margin:10px;
 `
 const PrimaryButton = Styled(Button)`
