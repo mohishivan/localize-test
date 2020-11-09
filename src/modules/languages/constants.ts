@@ -1,0 +1,2 @@
+export const ADD_LANGUAGE = "ADD_LANGUAGE"
+export const ADD_LANGUAGE_ATTEMPT = "ADD_LANGUAGE"
