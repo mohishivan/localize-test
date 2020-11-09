@@ -6,8 +6,7 @@ export function* addLanguageWatcher() {
 	while (true) {
 		const action = yield take(constants.ADD_LANGUAGE);
 		yield put(
-			Actions.addLanguage({ language: action.payload.language })
+			Actions.addLanguageAttempt({ language: action.payload.language })
 		);
 	}
 }
-

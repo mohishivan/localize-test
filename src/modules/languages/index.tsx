@@ -11,7 +11,7 @@ interface connectedProps {
 	list: LanguageListItem[];
 }
 
-type Props = connectedProps 
+type Props = connectedProps
 
 export const LanguagePage = (props: Props) => {
 	const { list, listData }  = props
@@ -22,17 +22,27 @@ export const LanguagePage = (props: Props) => {
 				<Button> Expand All </Button>
 				<Button> Collpase All </Button>
 			</Buttons>
-			<SideBar />
-			<LanguagesList list={ list } listData={ listData }/>
+			<Panel>
+				<SideBar />
+				<LanguagesList list={ list } listData={ listData }/>
+			</Panel>
 		</Container>
 	)
 }
 
 const Container = Styled.div`
-margin:40px;
-display:flex;
-flex-flow:row wrap;
-height:100%;
+	margin:40px;
+	display:flex;
+	flex-flow:column wrap;
+	width:100%;
+	height:100%;
+	box-sizing:border-box;
+`
+const Panel = Styled.div`
+	display:flex;
+	flex-flow:row nowrap;
+	box-sizing:border-box;
+	flex-grow:1;
 `
 const Buttons = Styled.div`
 flex-basis:100%;

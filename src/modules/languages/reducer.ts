@@ -1,6 +1,6 @@
 import { Reducer } from "redux";
 import produce from "immer";
-import { AddLanguageAction, AddLanguagePayload, LanguageState,LanguageListItem, LanguageAction} from "./types";
+import { AddLanguageAttemptAction, AddLanguageAttemptPayload, LanguageState,LanguageListItem, LanguageAction} from "./types";
 import * as constants from "./constants";
 
 const list = [
@@ -38,7 +38,7 @@ export const LanguageReducer: Reducer<LanguageState, LanguageAction> = (
 	switch (action.type) {
 		case constants.ADD_LANGUAGE_ATTEMPT:
 			return produce(state, (draft: LanguageState) => {
-				const { language } = (action as AddLanguageAction).payload;
+				const { language } = (action as AddLanguageAttemptAction).payload;
 				draft.list.push(language)
 			});
 		default:

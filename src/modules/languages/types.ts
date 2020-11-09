@@ -15,13 +15,16 @@ export interface LanguageState {
 export interface AddLanguagePayload {
 	language: LanguageListItem;
 }
+export interface AddLanguageAttemptPayload {
+	language: LanguageListItem;
+}
 
 export interface AddLanguageAction {
 	type: typeof constants.ADD_LANGUAGE;
 	payload: AddLanguagePayload;
 }
-export interface AddLanguageActionAttempt {
+export interface AddLanguageAttemptAction {
 	type: typeof constants.ADD_LANGUAGE_ATTEMPT;
 	payload: AddLanguagePayload;
 }
-export type LanguageAction = AddLanguageAction
+export type LanguageAction = AddLanguageAction | AddLanguageAttemptAction

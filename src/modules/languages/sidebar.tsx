@@ -14,15 +14,15 @@ const SideBar = () => {
 const Container = Styled.div`
 	display:flex;
 	flex-flow:column wrap;
-	width:240px;
+	flex-basis:200px;
+	min-width:200px;
 	height:100%;
-	min-height:100%;
+	padding-right:20px;
 `
 
 const Title = Styled.h1`
 	color: #5489DC;
-	font:300 26px Arial;
-	padding-right:10px;
+	font:400 26px Inter;
 	border-right:1px solid #CCCCCC;
 `
 
