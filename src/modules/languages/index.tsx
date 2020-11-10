@@ -10,16 +10,16 @@ export const LanguagePage = () => {
   return (
     <Container>
       <Buttons>
-				<Button mx="10px" ml="0px" px="20px" className="primary"> 
+				<Button mx="3px" ml="0px" px="12px" className="primary"> 
 					<span>New Project </span>
-					<ButtonIcons ml="10" fontSize="15px">
+					<ButtonIcons ml="6px" fontSize="12px">
 						<ImShift />
 						<FiCommand />
 						<b>P</b>
 					</ButtonIcons>
 				</Button>
-        <Button mx="10px" > Expand all </Button>
-        <Button mx="10px" > Collapse all </Button>
+        <Button mx="3px" > Expand all </Button>
+        <Button mx="3px" > Collapse all </Button>
       </Buttons>
       <Panel>
         <SideBar />
@@ -30,7 +30,7 @@ export const LanguagePage = () => {
 };
 
 const Container = Styled.div`
-	margin:40px;
+	margin:100px 60px 0px 60px;
 	display:flex;
 	flex-flow:column wrap;
 	height:100%;
@@ -43,6 +43,7 @@ const Panel = Styled.div`
 	flex-grow:1;
 `;
 const Buttons = Styled.div`
+	margin:0px 0px 40px 0px;
 	flex-basis:100%;
 	height:40px;
 	display:flex;

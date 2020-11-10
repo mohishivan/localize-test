@@ -29,6 +29,7 @@ const Container = Styled.div`
 	display:flex;
 	flex-grow:1;
 	flex-flow:row wrap;
+	padding:10px 0px 0px 20px;
 `
 
 export default connect((state:AppState) => ({

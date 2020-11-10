@@ -43,7 +43,7 @@ export const Container = Styled.div`
 	flex-flow:column nowrap;
 	flex-basis:25%;
 	box-sizing:border-box;
-	padding:15px;
+	padding:15px 30px 15px 0px;
 	margin-bottom:10px;
 	&:hover {
 		${ Remove } {

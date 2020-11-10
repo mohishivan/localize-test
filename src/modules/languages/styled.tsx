@@ -38,14 +38,14 @@ export interface BoxProps extends BaseProps,
   }
 
 	export const Button = Styled.div<BoxProps>`
-	font:400 14px Rubik;
+	font:400 13px Rubik;
 	display:flex;
 	cursor:pointer;
 	justify-content:center;
 	align-items:center;
 	flex-grow:0;
-	border-radius:4px;
-	padding:7px 15px;
+	border-radius:5px;
+	padding:7px 14px;
 	color:#5489DC;
 	background-color: white;
 	border: 1px solid #A9C4ED;
