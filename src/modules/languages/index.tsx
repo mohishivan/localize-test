@@ -8,15 +8,8 @@ import { LanguageListItem } from './types'
 import { AppState } from '../../store'
 import { Button } from './styled'
 
-interface connectedProps {
-	listData: LanguageListItem[];
-	list: LanguageListItem[];
-}
 
-type Props = connectedProps
-
-export const LanguagePage = (props: Props) => {
-	const { list, listData }  = props
+export const LanguagePage = () => {
 	return(
 		<Container>
 			<Buttons>
@@ -26,7 +19,7 @@ export const LanguagePage = (props: Props) => {
 			</Buttons>
 			<Panel>
 				<SideBar />
-				<LanguagesList list={ list } listData={ listData }/>
+				<LanguagesList/>
 			</Panel>
 		</Container>
 	)

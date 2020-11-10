@@ -9,7 +9,7 @@ export const Button = Styled.div`
 	align-items:center;
 	flex-grow:0;
 	border-radius:4px;
-	padding:8px 15px;
+	padding:7px 15px;
 	margin:10px;
 	color:#5489DC;
 	background-color: white;

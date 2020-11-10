@@ -98,6 +98,7 @@ const Info = Styled.div`
 	flex-flow:column wrap;
 	color:#5489DC;
 	font:300 17px Rubik;
+	letter-spacing:1px;
 	&.progress {
 		color:#888888;
 		flex-basis:25%;
@@ -107,10 +108,10 @@ const Info = Styled.div`
 	}
 	span {
 		display:block;
-		color:#888888;
+		color:rgba(136,136,136,0.80);
 		font:300 10px Rubik;
 		white-space:nowrap;
-		letter-spacing:1px;
+		letter-spacing:0px;
 	}
 `;
 

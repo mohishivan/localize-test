@@ -151,6 +151,7 @@ const AddLanguageButton = Styled(Button)`
 		box-sizing:border-box;
 		flex-basis:1;
 		align-self:center;
+		font:400 13px Rubik;
 `;
 const ActionButton = Styled(Button)`
 		display:inline;

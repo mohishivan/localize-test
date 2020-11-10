@@ -1,17 +1,18 @@
 import * as React from 'react';
 import Styled from 'styled-components'
+import { connect } from 'react-redux'
 import Language from './languages-item'
 import AddLanguage from './add-language'
 import { LanguageListItem } from './types'
+import {AppState} from '../../store'
 
 interface connectedProps {
-	listData: LanguageListItem[];
 	list: LanguageListItem[];
 }
 
 type Props = connectedProps 
 const LanguagesList = (props: Props) => {
-	const { list, listData }  = props
+	const { list }  = props
 	return(
 		<Container>
 			{ list.map(language => {
@@ -30,4 +31,6 @@ const Container = Styled.div`
 	flex-flow:row wrap;
 `
 
-export default LanguagesList
+export default connect((state:AppState) => ({
+	list: state.languages.list,
+}))(LanguagesList)

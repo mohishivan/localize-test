@@ -1,3 +1,4 @@
+import { AnyAction } from 'redux'
 import * as constants from './constants'
 
 export interface LanguageListItem {
@@ -27,4 +28,4 @@ export interface AddLanguageAttemptAction {
 	type: typeof constants.ADD_LANGUAGE_ATTEMPT;
 	payload: AddLanguagePayload;
 }
-export type LanguageAction = AddLanguageAction | AddLanguageAttemptAction
+export type LanguageAction = AddLanguageAction | AddLanguageAttemptAction | AnyAction

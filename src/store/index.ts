@@ -1,14 +1,26 @@
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
 import createSagaMiddleware from 'redux-saga'
+import { persistStore, persistReducer } from 'redux-persist'
+import localForage from 'localforage';
 import { LanguageReducer } from '../modules/languages/reducer'
 import { sagas } from './sagas'
-
 
 const sagaMiddleware = createSagaMiddleware()
 const middleware = [ sagaMiddleware ];
 
+const persistConfig = {
+  key: 'root',
+  storage: localForage,
+  blacklist: ['languages']
+}
+const languagesConfig = {
+  key: 'languages',
+  storage: localForage,
+  whitelist: ['list']
+}
+
 const reducers = combineReducers({
-  languages: LanguageReducer,
+  languages: persistReducer(languagesConfig, LanguageReducer),
 })
 
 declare global {
@@ -20,10 +32,11 @@ declare global {
 const configureStore = () => {
 
   
+  const persistedReducer = persistReducer(persistConfig, reducers)
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
   
   const store = createStore(
-      reducers,
+      persistedReducer,
       {},
       composeEnhancers(
         applyMiddleware(...middleware)
@@ -32,9 +45,9 @@ const configureStore = () => {
 
   sagaMiddleware.run(sagas)
   
-  return store
+  const persistor = persistStore(store)
+  return { store, persistor }
 }
 
 export type AppState  = ReturnType<typeof reducers>
-const store = configureStore() 
-export default store
+export const {store, persistor} = configureStore() 
