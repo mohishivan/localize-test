@@ -1,5 +1,5 @@
-import { AnyAction } from 'redux'
-import * as constants from './constants'
+import { AnyAction } from "redux";
+import * as constants from "./constants";
 
 export interface LanguageListItem {
 	name: string;
@@ -35,4 +35,7 @@ export interface RemoveLanguageAttemptAction {
 	type: typeof constants.REMOVE_LANGUAGE_ATTEMPT;
 	payload: RemoveLanguagePayload;
 }
-export type LanguageAction = AddLanguageAction | AddLanguageAttemptAction | AnyAction
+export type LanguageAction =
+	| AddLanguageAction
+	| AddLanguageAttemptAction
+	| AnyAction;

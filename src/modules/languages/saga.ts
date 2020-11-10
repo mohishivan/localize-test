@@ -5,8 +5,6 @@ import * as constants from "./constants";
 export function* addLanguageWatcher() {
 	while (true) {
 		const action = yield take(constants.ADD_LANGUAGE);
-		yield put(
-			Actions.addLanguageAttempt(action.payload)
-		);
+		yield put(Actions.addLanguageAttempt(action.payload));
 	}
 }

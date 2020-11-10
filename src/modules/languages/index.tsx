@@ -1,16 +1,16 @@
-import * as React from 'react';
-import Styled from 'styled-components';
-import {FiCommand} from 'react-icons/fi'
-import {ImShift} from 'react-icons/im'
-import SideBar from './sidebar';
-import LanguagesList from './languages-list';
-import { Button,ButtonIcons } from './styled';
+import * as React from "react";
+import Styled from "styled-components";
+import { FiCommand } from "react-icons/fi";
+import { ImShift } from "react-icons/im";
+import SideBar from "./sidebar";
+import LanguagesList from "./languages-list";
+import { Button, ButtonIcons } from "./styled";
 
 export const LanguagePage = () => {
-  return (
-    <Container>
-     <Buttons>
-				<Button mx="3px" ml="0px" px="10px" className="primary"> 
+	return (
+		<Container>
+			<Buttons>
+				<Button mx="3px" ml="0px" px="10px" className="primary">
 					<span>New Project </span>
 					<ButtonIcons ml="6px" fontSize="12px">
 						<ImShift />
@@ -18,15 +18,15 @@ export const LanguagePage = () => {
 						<b>P</b>
 					</ButtonIcons>
 				</Button>
-        <Button mx="2px" > Expand all </Button>
-        <Button mx="2px" > Collapse all </Button>
-      </Buttons>
-      <Panel>
-        <SideBar />
-        <LanguagesList />
-      </Panel>
-    </Container>
-  );
+				<Button mx="2px"> Expand all </Button>
+				<Button mx="2px"> Collapse all </Button>
+			</Buttons>
+			<Panel>
+				<SideBar />
+				<LanguagesList />
+			</Panel>
+		</Container>
+	);
 };
 
 const Container = Styled.div`
