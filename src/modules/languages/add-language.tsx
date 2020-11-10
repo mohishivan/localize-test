@@ -74,15 +74,9 @@ const AddLanguage = (props: Props) => {
     [listData, list],
   );
 
-  const defaultValues = React.useMemo(
-    () => {
-      return list
-			.map(lang => ({value: lang.name, label: lang.name}));
-    },
-    [list],
-  );
 
 	const selectLanguage = React.useCallback((values:IOption[]) => {
+		if(values === null){ return ;}
 		const languages = listData.filter(l => values.map(i=>i.value).includes(l.name))
 		if(!languages){ 
 			console.log({values})
@@ -93,24 +87,27 @@ const AddLanguage = (props: Props) => {
 
   return (
     <Container>
-      <AddLanguageButton onClick={() => toggleOpen(true)}>
+      <Button 
+				m="15px"
+				onClick={() => toggleOpen(true)}
+			>
         Add Language
-      </AddLanguageButton>
+      </Button>
       <Modal isOpen={isOpen} style={customStyles} contentLabel="Add languages">
 				<ModalStyles>
           <h1>Add languages</h1>
           <Select 
 						closeMenuOnSelect={false}
 						components={animatedComponents}
-						defaultValue={ defaultValues }
 						options={options} 
 						styles={selectStyles}
 						onChange={(val: any) => selectLanguage(val)}
 						isMulti
 					/>
           <Buttons>
-            <ActionButton onClick={() => toggleOpen(false)}>Close</ActionButton>
-						<ActionButton
+            <Button ml="10px" onClick={() => toggleOpen(false)}>Close</Button>
+						<Button
+							ml="10px" 
 							className="primary"
 							onClick={() => {
 								dispatch(Actions.addLanguage({ languages: selected }));
@@ -118,7 +115,7 @@ const AddLanguage = (props: Props) => {
 							}}
 						>
 							Add
-						</ActionButton>
+						</Button>
           </Buttons>
 				</ModalStyles>
       </Modal>
@@ -137,35 +134,12 @@ const ModalStyles = Styled.div`
 		margin:5px 0px 20px 0px;
 		font:400 22px Rubik;
 	}
-	.select__menu {
-		border:2px solid #000;
-		font:300 16px Rubik;
-		z-index:100;
-	}
-	.ReactModal__Content {
-		overflow:visible;
-	}
 `;
 const Buttons = Styled.div`
 	display:flex;
 	flex-flow:row;
 	justify-content:flex-end;
 	margin:30px 0px;
-`;
-
-const AddLanguageButton = Styled(Button)`
-		display:inline;
-		box-sizing:border-box;
-		flex-basis:1;
-		align-self:center;
-		font:400 13px Rubik;
-`;
-const ActionButton = Styled(Button)`
-		display:inline;
-		box-sizing:border-box;
-		flex-basis:1;
-		align-self:center;
-		margin:0px 0px 0px 10px;
 `;
 
 export default connect((state: AppState) => ({

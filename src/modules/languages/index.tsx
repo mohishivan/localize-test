@@ -8,9 +8,9 @@ export const LanguagePage = () => {
   return (
     <Container>
       <Buttons>
-        <PrimaryButton> New Project </PrimaryButton>
-        <Button> Expand all </Button>
-        <Button> Collapse all </Button>
+        <Button mx="10px" ml="0" px="20" className="primary"> New Project </Button>
+        <Button mx="10px" > Expand all </Button>
+        <Button mx="10px" > Collapse all </Button>
       </Buttons>
       <Panel>
         <SideBar />
@@ -40,9 +40,4 @@ const Buttons = Styled.div`
 	flex-flow:row wrap;
 `;
 
-const PrimaryButton = Styled(Button)`
-color:white;
-background-color: #5489DC;
-border: 1px solid white;
-`;
 export default LanguagePage;

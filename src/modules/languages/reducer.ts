@@ -22,7 +22,7 @@ const getLanguageList = () : LanguageListItem[] =>
 	list.map(({ name, code }) => ({
 		name,
 		code,
-		progress: Math.floor(Math.random() * 100),
+		progress: Math.floor(Math.random() * 80) + 20,
 		wordsToDo: Math.floor(Math.random() * 20000),
 		unverified: Math.floor(Math.random() * 12000),
 	}));
