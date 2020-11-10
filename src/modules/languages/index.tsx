@@ -9,7 +9,7 @@ import { Button,ButtonIcons } from './styled';
 export const LanguagePage = () => {
   return (
     <Container>
-      <Buttons>
+     <Buttons>
 				<Button mx="3px" ml="0px" px="10px" className="primary"> 
 					<span>New Project </span>
 					<ButtonIcons ml="6px" fontSize="12px">

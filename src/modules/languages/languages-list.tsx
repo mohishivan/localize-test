@@ -28,7 +28,7 @@ const LanguagesList = (props: Props) => {
 const Container = Styled.div`
 	display:flex;
 	flex-flow:row wrap;
-	padding:0px 0px 0px 20px;
+	padding:0px 0px 0px 5px;
 	height:min-content;
 	flex-grow:1;
 `

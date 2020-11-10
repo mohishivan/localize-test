@@ -20,7 +20,7 @@ const SideBar = (props:Props) => {
 			<Title>
 				Roamer App (Android SDK Test)
 			</Title>
-			<ProgressBar progress={progress} my="5px" height="3px"><i/></ProgressBar>
+			<ProgressBar progress={progress} mt="6px" mb="4px" height="3px"><i/></ProgressBar>
 			<Infos>
 				<Info><InfoLabel>Done</InfoLabel>{progress}%</Info>
 				<Info><InfoLabel>Base Words</InfoLabel>160246</Info>
@@ -49,8 +49,8 @@ const SideBar = (props:Props) => {
 const Container = Styled.div`
 	display:flex;
 	flex-flow:column wrap;
-	flex-basis:180px;
-	min-width:180px;
+	flex-basis:182px;
+	min-width:182px;
 	box-sizing:border-box;
 	height:100%;
 	border-right:1px solid #CCCCCC;
@@ -64,7 +64,7 @@ const Tags = Styled.div`
 
 const Tag = Styled.div<{background?: string; }>`
 	height:20px;
-	padding:0px 10px;
+	padding:0px 11px;
 	margin:0px 2px 0px 0px;
 	border-radius:10px;
 	display:flex;
@@ -79,7 +79,7 @@ const Tag = Styled.div<{background?: string; }>`
 const Icons = Styled.div`
 	display:flex;
 	flex-flow:row wrap;
-	margin:15px 0px 10px 0px;
+	margin:20px 0px 10px 0px;
 `
 const Icon = Styled.div<{background?:string;}>`
 	display:flex;
@@ -100,7 +100,7 @@ const Infos = Styled.div`
 	margin-top:7px;
 	${ Info }{
 		font-size:19px;
-		margin:10px 0px 8px 0px;
+		margin:10px 0px 5px 0px;
 		flex-basis:45%;
 		&:last-child{
 			text-align:left;
@@ -109,8 +109,8 @@ const Infos = Styled.div`
 `
 const Title = Styled.h1`
 	color: #5489DC;
-	margin-top:-6px;
-	font:400 21px Rubik;
+	margin-top:-5px;
+	font:400 21.5px Rubik;
 	padding:0px 20px 0px 0px;
 `
 
