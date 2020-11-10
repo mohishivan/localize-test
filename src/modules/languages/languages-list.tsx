@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Styled from 'styled-components'
 import Language from './languages-item'
+import AddLanguage from './add-language'
 import { LanguageListItem } from './types'
 
 interface connectedProps {
@@ -13,11 +14,12 @@ const LanguagesList = (props: Props) => {
 	const { list, listData }  = props
 	return(
 		<Container>
-			{ listData.map(language => {
+			{ list.map(language => {
 				return(
 					<Language language={ language }/>
 				)
 			})}
+			<AddLanguage />
 		</Container>
 	)
 }

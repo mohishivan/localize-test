@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { connect } from 'react-redux'
 import Styled from 'styled-components'
+import { typography, layout } from 'styled-system'
 import SideBar from './sidebar'
 import LanguagesList from './languages-list'
 import { LanguageListItem } from './types'
 import { AppState } from '../../store'
+import { Button } from './styled'
 
 interface connectedProps {
 	listData: LanguageListItem[];
@@ -20,7 +22,7 @@ export const LanguagePage = (props: Props) => {
 			<Buttons>
 				<PrimaryButton> New Project </PrimaryButton>
 				<Button> Expand all </Button>
-				<Button> Collpase all </Button>
+				<Button> Collapse all </Button>
 			</Buttons>
 			<Panel>
 				<SideBar />
@@ -34,7 +36,6 @@ const Container = Styled.div`
 	margin:40px;
 	display:flex;
 	flex-flow:column wrap;
-	width:100%;
 	height:100%;
 	box-sizing:border-box;
 `
@@ -51,19 +52,6 @@ const Buttons = Styled.div`
 	flex-flow:row wrap;
 `
 
-const Button = Styled.div`
-font:300 15px Rubik;
-color:#5489DC;
-display:flex;
-flex-flow:row wrap;
-justify-content:center;
-align-items:center;
-background-color: white;
-border: 1px solid #5489DC;
-border-radius:4px;
-padding:7px 15px;
-margin:10px;
-`
 const PrimaryButton = Styled(Button)`
 color:white;
 background-color: #5489DC;

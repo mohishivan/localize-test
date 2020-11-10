@@ -27,13 +27,12 @@ const LanguageItem = (props: Props) => {
 	);
 };
 
-const Container = Styled.div`
+export const Container = Styled.div`
 	display:flex;
 	flex-flow:column nowrap;
 	flex-basis:25%;
 	box-sizing:border-box;
-	min-width:120px;
-	margin:10px;
+	padding:10px;
 `;
 const Header = Styled.div`
 	display:flex;
@@ -49,6 +48,7 @@ const Flag = Styled.div`
 	display:flex;
 	img {
 		width:16px;
+		transform:scaleY(1.2);
 		opacity:0.6;
 	}
 `;
@@ -77,8 +77,8 @@ position:relative;
 	height:2px;
 	max-height:2px;
 	flex-grow:0;
-	background-color:#ccc;
-	margin:5px 0px 10px 0px;
+	background-color:#CFCFCF;
+	margin:7px 0px 10px 0px;
 	border-radius:3px;
 	i {
 		background-color:${ progressColor };
@@ -110,6 +110,7 @@ const Info = Styled.div`
 		color:#888888;
 		font:300 10px Rubik;
 		white-space:nowrap;
+		letter-spacing:1px;
 	}
 `;
 

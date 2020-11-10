@@ -13,10 +13,10 @@ export interface LanguageState {
 }
 
 export interface AddLanguagePayload {
-	language: LanguageListItem;
+	languages: LanguageListItem[];
 }
 export interface AddLanguageAttemptPayload {
-	language: LanguageListItem;
+	languages: LanguageListItem[];
 }
 
 export interface AddLanguageAction {
