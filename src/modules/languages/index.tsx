@@ -11,7 +11,7 @@ export const LanguagePage = () => {
 		<Container>
 			<Buttons>
 				<Button mx="3px" ml="0px" px="10px" className="primary">
-					<span>New Project </span>
+					<span>New Project</span>
 					<ButtonIcons ml="6px" fontSize="12px">
 						<ImShift />
 						<FiCommand />
