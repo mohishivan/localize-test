@@ -1,14 +1,23 @@
 import * as React from 'react';
 import Styled from 'styled-components';
+import {FiCommand} from 'react-icons/fi'
+import {ImShift} from 'react-icons/im'
 import SideBar from './sidebar';
 import LanguagesList from './languages-list';
-import { Button } from './styled';
+import { Button,ButtonIcons } from './styled';
 
 export const LanguagePage = () => {
   return (
     <Container>
       <Buttons>
-        <Button mx="10px" ml="0" px="20" className="primary"> New Project </Button>
+				<Button mx="10px" ml="0px" px="20px" className="primary"> 
+					<span>New Project </span>
+					<ButtonIcons ml="10" fontSize="15px">
+						<ImShift />
+						<FiCommand />
+						<b>P</b>
+					</ButtonIcons>
+				</Button>
         <Button mx="10px" > Expand all </Button>
         <Button mx="10px" > Collapse all </Button>
       </Buttons>

@@ -112,12 +112,21 @@ export const Info = Styled.div`
 	}
 `;
 
+export const ButtonIcons = Styled.div<BoxProps>`
+	display:flex;
+	flex-flow:row nowrap;
+	${ SS.space }
+	svg {
+		${ SS.color }
+		${ SS.typography }
+	}
+`
 function progressColor(props:ProgressBarProps):string{
 	const progress = props.progress
 	let color:string;
-	if(progress >= 80 ){
+	if(progress >= 60 ){
 		color = "#5489DC"
-	} else if(progress > 30 && progress < 80) {
+	} else if(progress > 30 && progress < 60) {
 		color = "#FFC500"
 	} else {
 		color = "#DB1F35"

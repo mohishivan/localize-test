@@ -22,7 +22,7 @@ const getLanguageList = () : LanguageListItem[] =>
 	list.map(({ name, code }) => ({
 		name,
 		code,
-		progress: Math.floor(Math.random() * 80) + 20,
+		progress: Math.floor(Math.random() * 90) + 10,
 		wordsToDo: Math.floor(Math.random() * 20000),
 		unverified: Math.floor(Math.random() * 12000),
 	}));
@@ -40,7 +40,7 @@ export const LanguageReducer: Reducer<LanguageState, LanguageAction> = (
 		case constants.ADD_LANGUAGE_ATTEMPT:
 			return produce(state, (draft: LanguageState) => {
 				const { languages } = (action as AddLanguageAttemptAction).payload;
-				draft.list = languages
+				draft.list = [...draft.list, ...languages]
 			});
 		case constants.REMOVE_LANGUAGE_ATTEMPT:
 			return produce(state, (draft: LanguageState) => {
