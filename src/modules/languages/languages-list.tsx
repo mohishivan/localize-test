@@ -17,7 +17,7 @@ const LanguagesList = (props: Props) => {
 		<Container>
 			{ list.map(language => {
 				return(
-					<Language language={ language }/>
+					<Language language={ language } key={`language-${language.name}`}/>
 				)
 			})}
 			<AddLanguage />

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Styled, { keyframes } from 'styled-components';
+import Styled from 'styled-components';
 import { connect, DispatchProp } from 'react-redux';
 import Modal from 'react-modal';
 import Select from 'react-select';
@@ -7,8 +7,8 @@ import makeAnimated from 'react-select/animated';
 import { LanguageListItem } from './types';
 import { AppState } from '../../store';
 import { Button } from './styled';
-import * as Actions from './actions'
-import './styles.css'
+import * as Actions from './actions';
+import './styles.css';
 
 interface connectedProps {
   listData: LanguageListItem[];
@@ -16,11 +16,10 @@ interface connectedProps {
 }
 
 interface IOption {
-	label: string;
-	value: string;
+  label: string;
+  value: string;
 }
 type Props = connectedProps & DispatchProp;
-
 
 const customStyles = {
   content: {
@@ -30,35 +29,35 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     borderRadius: '6px',
-		border: 'transparent',
+    border: 'transparent',
     transform: 'translate(-50%, -50%)',
     backgroundColor: 'white',
     width: '600px',
-		height: 'auto',
-		padding: '30px',
-		overflow: 'unset',
+    height: 'auto',
+    padding: '30px',
+    overflow: 'unset',
   },
-	overlay: {
-		backgroundColor: 'rgba(0,0,0,0.5)',
-	},
+  overlay: {
+    backgroundColor: 'rgba(0,0,0,0.5)',
+  },
 };
 
 const selectStyles = {
-	control: (styles:any) => ({
-			...styles,
-			font: '300 14px Rubik'
-		}),
-	option: (styles:any) => ({
-			...styles,
-			font: '300 14px Rubik'
-		}),
-	multiValue: (styles:any) => ({
-			...styles,
-			font: '300 16px Rubik',
-			padding: '2px 4px',
-			borderRadius: '5px',
-		}),
-}
+  control: (styles: any) => ({
+    ...styles,
+    font: '300 14px Rubik',
+  }),
+  option: (styles: any) => ({
+    ...styles,
+    font: '300 14px Rubik',
+  }),
+  multiValue: (styles: any) => ({
+    ...styles,
+    font: '300 16px Rubik',
+    padding: '2px 4px',
+    borderRadius: '5px',
+  }),
+};
 
 const animatedComponents = makeAnimated();
 
@@ -90,7 +89,7 @@ const AddLanguage = (props: Props) => {
 			return; 
 		}
 		select(languages)
-	},[select, list, listData])
+	},[select, listData])
 
   return (
     <Container>
@@ -111,7 +110,15 @@ const AddLanguage = (props: Props) => {
 					/>
           <Buttons>
             <ActionButton onClick={() => toggleOpen(false)}>Close</ActionButton>
-						<ActionButton className="primary" onClick={() => dispatch(Actions.addLanguage({languages: selected}))}>Add</ActionButton>
+						<ActionButton
+							className="primary"
+							onClick={() => {
+								dispatch(Actions.addLanguage({ languages: selected }));
+								toggleOpen(false);
+							}}
+						>
+							Add
+						</ActionButton>
           </Buttons>
 				</ModalStyles>
       </Modal>

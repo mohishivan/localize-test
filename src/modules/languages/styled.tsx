@@ -1,4 +1,3 @@
-import * as React from 'react'
 import Styled from 'styled-components'
 
 export const Button = Styled.div`

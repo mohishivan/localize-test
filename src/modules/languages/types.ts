@@ -13,6 +13,9 @@ export interface LanguageState {
 	list: LanguageListItem[];
 }
 
+export interface RemoveLanguagePayload {
+	name: string;
+}
 export interface AddLanguagePayload {
 	languages: LanguageListItem[];
 }
@@ -27,5 +30,9 @@ export interface AddLanguageAction {
 export interface AddLanguageAttemptAction {
 	type: typeof constants.ADD_LANGUAGE_ATTEMPT;
 	payload: AddLanguagePayload;
+}
+export interface RemoveLanguageAttemptAction {
+	type: typeof constants.REMOVE_LANGUAGE_ATTEMPT;
+	payload: RemoveLanguagePayload;
 }
 export type LanguageAction = AddLanguageAction | AddLanguageAttemptAction | AnyAction
