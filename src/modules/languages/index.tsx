@@ -10,7 +10,7 @@ export const LanguagePage = () => {
   return (
     <Container>
       <Buttons>
-				<Button mx="3px" ml="0px" px="12px" className="primary"> 
+				<Button mx="3px" ml="0px" px="10px" className="primary"> 
 					<span>New Project </span>
 					<ButtonIcons ml="6px" fontSize="12px">
 						<ImShift />
@@ -18,8 +18,8 @@ export const LanguagePage = () => {
 						<b>P</b>
 					</ButtonIcons>
 				</Button>
-        <Button mx="3px" > Expand all </Button>
-        <Button mx="3px" > Collapse all </Button>
+        <Button mx="2px" > Expand all </Button>
+        <Button mx="2px" > Collapse all </Button>
       </Buttons>
       <Panel>
         <SideBar />
@@ -38,12 +38,12 @@ const Container = Styled.div`
 `;
 const Panel = Styled.div`
 	display:flex;
+	margin-top:40px;
 	flex-flow:row nowrap;
 	box-sizing:border-box;
 	flex-grow:1;
 `;
 const Buttons = Styled.div`
-	margin:0px 0px 40px 0px;
 	flex-basis:100%;
 	height:40px;
 	display:flex;

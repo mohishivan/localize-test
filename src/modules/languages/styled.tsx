@@ -65,17 +65,18 @@ const animation = (props:ProgressBarProps) => keyframes`
     from { width: 0px }
     to { width: ${ progressPercentage(props) }% }
 `
-export const ProgressBar = Styled.div<ProgressBarProps>`
+export const ProgressBar = Styled.div<ProgressBarProps & BoxProps>`
 position:relative;
 	flex-basis:100%;
 	display:flex;
 	flex-flow:row wrap;
 	height:2px;
-	max-height:2px;
 	flex-grow:0;
 	background-color:#CFCFCF;
 	margin:7px 0px 10px 0px;
 	border-radius:3px;
+	${ SS.layout }
+	${ SS.space }
 	i {
 		background-color:${ progressColor };
 		display:block;
@@ -83,32 +84,35 @@ position:relative;
 		border-radius:2px;
 		transform-origin:0 0;
 		z-index:1;
-    animation: ${ animation } 2s ease;
+	${ SS.layout }
+    animation: ${ animation } 1s ease;
 		animation-iteration-count:1;
 		animation-fill-mode: forwards;
 	}
 `;
 
-export const Info = Styled.div`
-	flex-basis:30%;
-	display:flex;
-	flex-flow:column wrap;
-	color:#5489DC;
-	font:300 17px Rubik;
-	letter-spacing:1px;
-	&.progress {
-		color:#888888;
-		flex-basis:25%;
-	}
-	&:last-child{
-		text-align:right;
-	}
-	span {
+
+export const InfoLabel = Styled.div<BoxProps & {highlight?: boolean;}>`
+		${ SS.layout };
+		${ SS.typography };
 		display:block;
+		text-transform:uppercase;
 		color:rgba(136,136,136,0.80);
 		font:300 10px Rubik;
 		white-space:nowrap;
 		letter-spacing:0px;
+`
+export const Info = Styled.div<BoxProps & {highlight?: boolean;}>`
+	flex-basis:30%;
+	display:flex;
+	flex-flow:column wrap;
+	color:${ p => p.highlight ? "#5489DC" : "#888888" };
+	font:300 17px Rubik;
+	${ SS.layout };
+	${ SS.typography };
+	letter-spacing:1px;
+	&:last-child{
+		text-align:right;
 	}
 `;
 

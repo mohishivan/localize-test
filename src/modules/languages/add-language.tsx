@@ -91,7 +91,7 @@ const AddLanguage = (props: Props) => {
 				m="15px"
 				onClick={() => toggleOpen(true)}
 			>
-        Add Language
+        Add language
       </Button>
       <Modal isOpen={isOpen} style={customStyles} contentLabel="Add languages">
 				<ModalStyles>

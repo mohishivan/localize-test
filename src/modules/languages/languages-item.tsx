@@ -5,7 +5,7 @@ import FlagImg from 'react-world-flags'
 import { FiX } from 'react-icons/fi'
 import { LanguageListItem } from './types'
 import * as Actions from './actions'
-import { ProgressBar, Info } from './styled'
+import { ProgressBar, Info, InfoLabel } from './styled'
 
 interface connectedProps {
 	language: LanguageListItem;
@@ -22,11 +22,11 @@ const LanguageItem = (props: Props) => {
 				<Title>{ name }</Title>
 				<Remove onClick={() => dispatch(Actions.removeLanguage({name}))}><FiX/></Remove>
 			</Header>
-			<ProgressBar progress={ progress } ><i/></ProgressBar>
+			<ProgressBar progress={ progress } mt="8px" maxHeight="2px"><i/></ProgressBar>
 			<Body>
-				<Info className="progress"><span>DONE</span>{progress}%</Info>
-				<Info><span>WORDS TO DO</span>{wordsToDo}</Info>
-				<Info><span>UNVERIFIED</span>{unverified}</Info>
+				<Info><InfoLabel>DONE</InfoLabel>{progress}%</Info>
+				<Info highlight><InfoLabel>WORDS TO DO</InfoLabel>{wordsToDo}</Info>
+				<Info highlight><InfoLabel>UNVERIFIED</InfoLabel>{unverified}</Info>
 			</Body>
 		</Container>
 	);
@@ -43,8 +43,8 @@ export const Container = Styled.div`
 	flex-flow:column nowrap;
 	flex-basis:25%;
 	box-sizing:border-box;
-	padding:15px 30px 15px 0px;
-	margin-bottom:10px;
+	padding:5px 30px 0px 0px;
+	margin-bottom:30px;
 	&:hover {
 		${ Remove } {
 			pointer-events:auto;
@@ -63,11 +63,11 @@ const Body = Styled.div`
 	justify-content:space-between;
 `;
 const Flag = Styled.div`
-	flex-basis:30px;
+	flex-basis:26px;
 	display:flex;
 	img {
-		width:15px;
-		transform:scaleY(1.1);
+		width:16px;
+		transform:scaleY(1.2);
 		opacity:0.6;
 	}
 `;
