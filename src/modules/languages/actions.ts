@@ -1,13 +1,26 @@
 import {
+	FetchLanguagesListAction,
 	AddLanguageAction,
 	AddLanguagePayload,
 	AddLanguageAttemptPayload,
 	AddLanguageAttemptAction,
 	RemoveLanguagePayload,
 	RemoveLanguageAttemptAction,
+	PutLanguagesPayload,
+	PutLanguagesAction,
 } from "./types";
 import * as constants from "./constants";
 
+export const fetchLanguages = (): FetchLanguagesListAction => ({
+	type: constants.FETCH_LANGUAGES,
+});
+
+export const putLanguages = (
+	payload: PutLanguagesPayload
+): PutLanguagesAction => ({
+	type: constants.PUT_LANGUAGES,
+	payload,
+});
 export const addLanguage = (
 	payload: AddLanguagePayload
 ): AddLanguageAction => ({

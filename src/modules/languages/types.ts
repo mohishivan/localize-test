@@ -11,6 +11,7 @@ export interface LanguageListItem {
 export interface LanguageState {
 	listData: LanguageListItem[];
 	list: LanguageListItem[];
+	authToken: string;
 }
 
 export interface RemoveLanguagePayload {
@@ -22,7 +23,16 @@ export interface AddLanguagePayload {
 export interface AddLanguageAttemptPayload {
 	languages: LanguageListItem[];
 }
-
+export interface FetchLanguagesListAction {
+	type: typeof constants.FETCH_LANGUAGES;
+}
+export interface PutLanguagesAction {
+	type: typeof constants.PUT_LANGUAGES;
+	payload: PutLanguagesPayload;
+}
+export interface PutLanguagesPayload {
+	languages: LanguageListItem[];
+}
 export interface AddLanguageAction {
 	type: typeof constants.ADD_LANGUAGE;
 	payload: AddLanguagePayload;

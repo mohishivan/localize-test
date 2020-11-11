@@ -1,5 +1,27 @@
-import { LanguageListItem } from './types'
+import { LanguageListItem } from "./types";
 
+const listData = [
+	{
+		name: "country one",
+		code: "one",
+		wordsToDo: 100,
+		progress: 50,
+		unverified: 50,
+	},
+	{
+		name: "country two",
+		code: "one",
+		wordsToDo: 200,
+		progress: 70,
+		unverified: 30,
+	},
+];
+export const state = {
+	languages: {
+		listData: listData,
+		list: [],
+	},
+};
 export const list = [
 	{ name: "English", code: "gbr" },
 	{ name: "Russian", code: "rus" },
@@ -13,6 +35,9 @@ export const list = [
 	{ name: "Arabic", code: "egy" },
 	{ name: "Portuguese", code: "prt" },
 	{ name: "French", code: "fra" },
+	{ name: "Ukranian", code: "ukr" },
+	{ name: "Norwegian", code: "nor" },
+	{ name: "Polish", code: "pol" },
 ];
 
 export const getLanguageList = (): LanguageListItem[] =>

@@ -10,7 +10,7 @@ export const LanguagePage = () => {
 	return (
 		<Container>
 			<Buttons>
-				<Button mx="3px" ml="0px" px="10px" className="primary">
+				<Button py="7px" mx="3px" mt="3px" ml="0px" px="10px" className="primary">
 					<span>New Project</span>
 					<ButtonIcons ml="6px" fontSize="12px">
 						<ImShift />
@@ -18,8 +18,8 @@ export const LanguagePage = () => {
 						<b>P</b>
 					</ButtonIcons>
 				</Button>
-				<Button mx="2px"> Expand all </Button>
-				<Button mx="2px"> Collapse all </Button>
+				<Button  py="6px" px="14px" mx="2px" mt="4px"> Expand all </Button>
+				<Button  py="6px" px="14px" mx="2px" mt="4px"> Collapse all </Button>
 			</Buttons>
 			<Panel>
 				<SideBar />
