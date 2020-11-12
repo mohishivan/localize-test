@@ -1,28 +1,22 @@
 import * as React from "react";
 import Styled from "styled-components";
-import { connect, DispatchProp } from "react-redux";
+import { connect, ConnectedProps } from "react-redux";
 import {isEmpty} from 'lodash'
 import Language from "./languages-item";
 import AddLanguage from "./add-language";
-import { LanguageListItem } from "./types";
 import * as Actions from './actions'
 import { AppState } from "../../store";
 
-interface connectedProps {
-	listData: LanguageListItem[];
-	list: LanguageListItem[];
-}
-
-type Props = connectedProps & DispatchProp;
+type Props = ReduxProps
 
 const LanguagesList = (props: Props) => {
-	const { list, listData, dispatch } = props;
+	const { list, listData, fetchLanguages } = props;
 
 	React.useEffect(() => {
 		if (isEmpty(listData)) {
-			dispatch(Actions.fetchLanguages());
+			fetchLanguages();
 		}
-	}, [listData, dispatch]);
+	}, [listData, fetchLanguages]);
 
 	return (
 		<Container>
@@ -44,7 +38,17 @@ const Container = Styled.div`
 	flex-grow:1;
 `;
 
-export default connect((state: AppState) => ({
+const mapState = (state: AppState) => ({
 	listData: state.languages.listData,
 	list: state.languages.list,
-}))(LanguagesList);
+})
+
+const mapDispatch = {
+	fetchLanguages: Actions.fetchLanguages
+}
+
+const connector = connect(mapState, mapDispatch)
+
+type ReduxProps = ConnectedProps<typeof connector>
+
+export default connector(LanguagesList);

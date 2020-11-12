@@ -1,6 +1,6 @@
 import * as React from "react";
 import Styled from "styled-components";
-import { connect, DispatchProp } from "react-redux";
+import { connect } from "react-redux";
 import Modal from "react-modal";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
@@ -9,17 +9,20 @@ import { AppState } from "../../store";
 import { Button } from "./styled";
 import * as Actions from "./actions";
 import "./styles.css";
+import * as Types from './types'
 
-interface connectedProps {
+interface StateProps {
 	listData: LanguageListItem[];
 	list: LanguageListItem[];
 }
-
+interface DispatchProps {
+	addLanguage(payload: Types.AddLanguagePayload) : Types.AddLanguageAction ;
+}
 interface IOption {
 	label: string;
 	value: string;
 }
-type Props = connectedProps & DispatchProp;
+type Props = StateProps & DispatchProps;
 
 const customStyles = {
 	content: {
@@ -61,8 +64,8 @@ const selectStyles = {
 
 const animatedComponents = makeAnimated();
 
-const AddLanguage = (props: Props) => {
-	const { listData, list, dispatch } = props;
+export const AddLanguage = (props: Props) => {
+	const { listData, list, addLanguage } = props;
 	const [isOpen, toggleOpen] = React.useState(false);
 	const [selected, select] = React.useState<LanguageListItem[]>([]);
 	const options = React.useMemo(() => {
@@ -112,7 +115,7 @@ const AddLanguage = (props: Props) => {
 							ml="10px"
 							className="primary"
 							onClick={() => {
-								dispatch(Actions.addLanguage({ languages: selected }));
+								addLanguage({ languages: selected });
 								toggleOpen(false);
 							}}
 						>
@@ -144,7 +147,13 @@ const Buttons = Styled.div`
 	margin:30px 0px;
 `;
 
-export default connect((state: AppState) => ({
+const mapState = (state: AppState) => ({
 	listData: state.languages.listData,
 	list: state.languages.list,
-}))(AddLanguage);
+});
+const mapDispatch = { addLanguage: Actions.addLanguage };
+
+export default connect(
+	mapState,
+	mapDispatch
+)(AddLanguage);

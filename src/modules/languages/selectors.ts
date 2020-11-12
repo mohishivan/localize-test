@@ -1,7 +1,7 @@
 import { createSelector } from "reselect";
-import { AppState } from "../../store";
+import { LanguageState } from "./types";
 
-const getList = (state: AppState) => state.languages.list;
+const getList = (languages: LanguageState) => languages.list;
 
 export const getTotalProgress = createSelector([getList], (list) => {
 	if (!list) {

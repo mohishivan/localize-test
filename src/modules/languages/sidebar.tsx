@@ -14,12 +14,12 @@ import {
 	CheckMark,
 } from "./icons";
 
-interface connectedProps {
+interface StateProps {
 	progress: number;
 	unverified: number;
 }
 
-type Props = connectedProps;
+type Props = StateProps;
 
 const SideBar = (props: Props) => {
 	const { progress, unverified } = props;
@@ -149,7 +149,9 @@ const Title = Styled.h1`
 	padding:0px 20px 0px 0px;
 `;
 
-export default connect((state: AppState) => ({
-	progress: Selectors.getTotalProgress(state),
-	unverified: Selectors.getTotalUnverified(state),
-}))(SideBar);
+const mapState = (state: AppState) => ({
+	progress: Selectors.getTotalProgress(state.languages),
+	unverified: Selectors.getTotalUnverified(state.languages),
+})
+
+export default connect(mapState)(SideBar);

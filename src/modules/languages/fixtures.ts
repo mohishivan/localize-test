@@ -1,25 +1,29 @@
-import { LanguageListItem } from "./types";
+import { LanguageListItem, LanguageState } from "./types";
 
-const listData = [
+export const listData = [
 	{
-		name: "country one",
-		code: "one",
+		name: "Latvian",
+		code: "lvt",
 		wordsToDo: 100,
 		progress: 50,
 		unverified: 50,
 	},
 	{
-		name: "country two",
-		code: "one",
+		name: "Estonian",
+		code: "est",
 		wordsToDo: 200,
 		progress: 70,
 		unverified: 30,
 	},
 ];
+export interface State {
+	languages: LanguageState;
+}
 export const state = {
 	languages: {
 		listData: listData,
 		list: [],
+		authToken: null,
 	},
 };
 export const list = [

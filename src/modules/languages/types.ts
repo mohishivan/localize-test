@@ -11,7 +11,7 @@ export interface LanguageListItem {
 export interface LanguageState {
 	listData: LanguageListItem[];
 	list: LanguageListItem[];
-	authToken: string;
+	authToken: string | null;
 }
 
 export interface RemoveLanguagePayload {
@@ -45,7 +45,13 @@ export interface RemoveLanguageAttemptAction {
 	type: typeof constants.REMOVE_LANGUAGE_ATTEMPT;
 	payload: RemoveLanguagePayload;
 }
+export interface RemoveLanguageAction {
+	type: typeof constants.REMOVE_LANGUAGE;
+	payload: RemoveLanguagePayload;
+}
 export type LanguageAction =
 	| AddLanguageAction
+	| RemoveLanguageAction
+	| RemoveLanguageAttemptAction
 	| AddLanguageAttemptAction
 	| AnyAction;
