@@ -1,56 +1,13 @@
-import * as React from "react";
-import { connect } from "react-redux";
-import { Dispatch, bindActionCreators } from 'redux'
-import Styled from "styled-components";
-import FlagImg from "react-world-flags";
-import { FiX } from "react-icons/fi";
-import { LanguageListItem, LanguageAction } from "./types";
-import * as Actions from "./actions";
-import { ProgressBar, Info, InfoLabel } from "./styled";
-import { RemoveLanguageAttemptAction, RemoveLanguagePayload } from "./types";
-
-interface OwnProps {
-	language: LanguageListItem;
-}
-interface DispatchProps {
-	removeLanguage(payload: RemoveLanguagePayload): RemoveLanguageAttemptAction;
-}
-type Props = OwnProps & DispatchProps;
-
-const LanguageItem = (props: Props) => {
-	const { language, removeLanguage } = props;
-	const { name, code, wordsToDo, progress, unverified } = language;
-	return (
-		<Container>
-			<Header>
-				<Flag>
-					<FlagImg code={code} />
-				</Flag>
-				<Title>{name}</Title>
-				<Remove onClick={() => removeLanguage({ name })}>
-					<FiX />
-				</Remove>
-			</Header>
-			<ProgressBar progress={progress} mt="8px" maxHeight="2px">
-				<i />
-			</ProgressBar>
-			<Body>
-				<Info>
-					<InfoLabel>DONE</InfoLabel>
-					{progress}%
-				</Info>
-				<Info highlight>
-					<InfoLabel>WORDS TO DO</InfoLabel>
-					{wordsToDo}
-				</Info>
-				<Info highlight>
-					<InfoLabel>UNVERIFIED</InfoLabel>
-					{unverified}
-				</Info>
-			</Body>
-		</Container>
-	);
-};
+import * as React from 'react';
+import { connect } from 'react-redux';
+import { Dispatch, bindActionCreators } from 'redux';
+import Styled from 'styled-components';
+import FlagImg from 'react-world-flags';
+import { FiX } from 'react-icons/fi';
+import { LanguageListItem, LanguageAction } from './types';
+import * as Actions from './actions';
+import { ProgressBar, Info, InfoLabel } from './styled';
+import { RemoveLanguageAttemptAction, RemoveLanguagePayload } from './types';
 
 export const Remove = Styled.div`
 	opacity:0;
@@ -99,9 +56,57 @@ flex-basis:100%;
 	color:#5489DC;
 `;
 
-const mapDispatchToProps = (dispatch: Dispatch<LanguageAction>) =>
-  bindActionCreators({
-		removeLanguage: Actions.removeLanguage,
-  }, dispatch);
+interface OwnProps {
+    language: LanguageListItem;
+}
+interface DispatchProps {
+    // eslint-disable-next-line
+    removeLanguage(payload: RemoveLanguagePayload): RemoveLanguageAttemptAction;
+}
+type Props = OwnProps & DispatchProps;
 
-export default connect(() => {}, mapDispatchToProps)(LanguageItem);
+const LanguageItem: React.FC<Props> = (props: Props) => {
+    const { language, removeLanguage } = props;
+    const { name, code, wordsToDo, progress, unverified } = language;
+    return (
+        <Container>
+            <Header>
+                <Flag>
+                    <FlagImg code={code} />
+                </Flag>
+                <Title>{name}</Title>
+                <Remove onClick={() => removeLanguage({ name })}>
+                    <FiX />
+                </Remove>
+            </Header>
+            <ProgressBar progress={progress} mt="8px" maxHeight="2px">
+                <i />
+            </ProgressBar>
+            <Body>
+                <Info>
+                    <InfoLabel>DONE</InfoLabel>
+                    {progress}%
+                </Info>
+                <Info highlight>
+                    <InfoLabel>WORDS TO DO</InfoLabel>
+                    {wordsToDo}
+                </Info>
+                <Info highlight>
+                    <InfoLabel>UNVERIFIED</InfoLabel>
+                    {unverified}
+                </Info>
+            </Body>
+        </Container>
+    );
+};
+
+const mapDispatchToProps = (dispatch: Dispatch<LanguageAction>) =>
+    bindActionCreators(
+        {
+            removeLanguage: Actions.removeLanguage,
+        },
+        dispatch,
+    );
+
+const mapState = () => ({});
+export default connect(mapState, mapDispatchToProps)(LanguageItem);

@@ -1,41 +1,42 @@
-import { HTMLAttributes } from "react";
-import Styled, { keyframes } from "styled-components";
-import * as SS from "styled-system";
-import * as CSS from "csstype";
-export interface BaseProps extends HTMLAttributes<HTMLDivElement> {}
+import { HTMLAttributes } from 'react';
+import Styled, { keyframes } from 'styled-components';
+import * as SS from 'styled-system';
+import * as CSS from 'csstype';
+
+export type BaseProps = HTMLAttributes<HTMLDivElement>;
 
 export interface BoxProps
-	extends BaseProps,
-		SS.BackgroundColorProps,
-		SS.SpaceProps,
-		SS.FontSizeProps,
-		SS.BorderProps,
-		SS.BorderColorProps,
-		SS.BorderRadiusProps,
-		SS.DisplayProps,
-		SS.WidthProps,
-		SS.MaxWidthProps,
-		SS.MinWidthProps,
-		SS.HeightProps,
-		SS.MaxHeightProps,
-		SS.MinHeightProps,
-		SS.AlignItemsProps,
-		SS.AlignContentProps,
-		SS.JustifyContentProps,
-		SS.FlexWrapProps,
-		SS.FlexDirectionProps,
-		SS.FlexProps,
-		SS.FlexBasisProps,
-		SS.JustifySelfProps,
-		SS.AlignSelfProps,
-		SS.OrderProps,
-		SS.PositionProps,
-		SS.ZIndexProps,
-		SS.TopProps,
-		SS.LeftProps,
-		SS.RightProps,
-		SS.BottomProps {
-	color?: CSS.Property.Color;
+    extends BaseProps,
+        SS.BackgroundColorProps,
+        SS.SpaceProps,
+        SS.FontSizeProps,
+        SS.BorderProps,
+        SS.BorderColorProps,
+        SS.BorderRadiusProps,
+        SS.DisplayProps,
+        SS.WidthProps,
+        SS.MaxWidthProps,
+        SS.MinWidthProps,
+        SS.HeightProps,
+        SS.MaxHeightProps,
+        SS.MinHeightProps,
+        SS.AlignItemsProps,
+        SS.AlignContentProps,
+        SS.JustifyContentProps,
+        SS.FlexWrapProps,
+        SS.FlexDirectionProps,
+        SS.FlexProps,
+        SS.FlexBasisProps,
+        SS.JustifySelfProps,
+        SS.AlignSelfProps,
+        SS.OrderProps,
+        SS.PositionProps,
+        SS.ZIndexProps,
+        SS.TopProps,
+        SS.LeftProps,
+        SS.RightProps,
+        SS.BottomProps {
+    color?: CSS.Property.Color;
 }
 
 export const Button = Styled.div<BoxProps>`
@@ -59,10 +60,28 @@ export const Button = Styled.div<BoxProps>`
 	}
 `;
 interface ProgressBarProps {
-	progress: number;
+    progress: number;
 }
 
-const animation = (props: ProgressBarProps) => keyframes`
+function progressColor(props: ProgressBarProps): string {
+    const progress = props.progress;
+    let color: string;
+    if (progress >= 60) {
+        color = '#5489DC';
+    } else if (progress > 30 && progress < 60) {
+        color = '#FFC500';
+    } else {
+        color = '#DB1F35';
+    }
+    return color;
+}
+
+function progressPercentage(props: ProgressBarProps): string {
+    const progress = props.progress;
+    return String(Math.floor(progress));
+}
+
+const animation = (props: ProgressBarProps): ReturnType<typeof keyframes> => keyframes`
     from { width: 0px }
     to { width: ${progressPercentage(props)}% }
 `;
@@ -106,7 +125,7 @@ export const Info = Styled.div<BoxProps & { highlight?: boolean }>`
 	flex-basis:30%;
 	display:flex;
 	flex-flow:column wrap;
-	color:${(p) => (p.highlight ? "#5489DC" : "#888888")};
+	color:${(p): string | undefined => (p.highlight ? '#5489DC' : '#888888')};
 	font:300 17px Rubik;
 	${SS.layout};
 	${SS.typography};
@@ -125,20 +144,3 @@ export const ButtonIcons = Styled.div<BoxProps>`
 		${SS.typography}
 	}
 `;
-function progressColor(props: ProgressBarProps): string {
-	const progress = props.progress;
-	let color: string;
-	if (progress >= 60) {
-		color = "#5489DC";
-	} else if (progress > 30 && progress < 60) {
-		color = "#FFC500";
-	} else {
-		color = "#DB1F35";
-	}
-	return color;
-}
-
-function progressPercentage(props: ProgressBarProps): string {
-	const progress = props.progress;
-	return String(Math.floor(progress));
-}

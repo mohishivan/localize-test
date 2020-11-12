@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { SvgIcon } from './svg-types';
 
-export const Pulse: React.FC<SvgIcon> = () => (
+export const Pulse: SvgIcon = (): JSX.Element => (
     <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         {' '}
         <path
@@ -11,7 +11,7 @@ export const Pulse: React.FC<SvgIcon> = () => (
     </svg>
 );
 
-export const Person: React.FC<SvgIcon> = () => (
+export const Person: SvgIcon = (): JSX.Element => (
     <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
             d="M17.5191 12.9116C15.4473 10.5249 12.3976 9 8.99981 9C5.58544 9 2.53572 10.5083 0.480469 12.9116C1.95561 16.1436 5.2208 18.3812 8.99981 18.3812C12.7788 18.3812 16.0274 16.1436 17.5191 12.9116Z"
@@ -24,7 +24,7 @@ export const Person: React.FC<SvgIcon> = () => (
     </svg>
 );
 
-export const Book: React.FC<SvgIcon> = () => (
+export const Book: SvgIcon = (): JSX.Element => (
     <svg width="22" height="17" viewBox="0 0 22 17" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
             d="M5.82858 0.497162C3.93908 0.497162 2.1656 1.02755 0.673889 1.95573V16.6242C2.18218 15.6961 3.93908 15.1657 5.82858 15.1657C7.71808 15.1657 9.49158 15.6961 10.9833 16.6242V1.95573C9.49158 1.02755 7.71808 0.497162 5.82858 0.497162Z"
@@ -45,7 +45,7 @@ export const Book: React.FC<SvgIcon> = () => (
     </svg>
 );
 
-export const Camera: React.FC<SvgIcon> = () => (
+export const Camera: SvgIcon = (): JSX.Element => (
     <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
             d="M10.0172 11.8177C11.5734 11.8177 12.8349 10.5562 12.8349 8.99999C12.8349 7.44383 11.5734 6.18231 10.0172 6.18231C8.46104 6.18231 7.19952 7.44383 7.19952 8.99999C7.19952 10.5562 8.46104 11.8177 10.0172 11.8177Z"
@@ -59,7 +59,7 @@ export const Camera: React.FC<SvgIcon> = () => (
     </svg>
 );
 
-export const CheckMark: React.FC<SvgIcon> = () => (
+export const CheckMark: SvgIcon = (): JSX.Element => (
     <svg width="17" height="13" viewBox="0 0 17 13" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
             d="M6.15902 9.93425L1.852 5.64381L0.543335 6.95248L6.15902 12.5682L16.4793 2.24789L15.1706 0.939224L6.15902 9.93425Z"
@@ -68,7 +68,7 @@ export const CheckMark: React.FC<SvgIcon> = () => (
     </svg>
 );
 
-export const ArrowUp: React.FC<SvgIcon> = () => (
+export const ArrowUp: SvgIcon = (): JSX.Element => (
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
             d="M15.4916 7.99991L7.99991 0.508202L0.491638 8.01649L1.81761 9.34246L7.05517 4.10489V15.5082H8.92811V4.08831L14.1657 9.32588L15.4916 7.99991Z"
@@ -77,7 +77,7 @@ export const ArrowUp: React.FC<SvgIcon> = () => (
     </svg>
 );
 
-export const ArrowDown: React.FC<SvgIcon> = () => (
+export const ArrowDown: SvgIcon = (): JSX.Element => (
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
             d="M0.508362 7.99991L8.00007 15.4916L15.5084 7.98334L14.1824 6.65737L8.94482 11.8949V0.508202H7.07189V11.9115L1.83433 6.67395L0.508362 7.99991Z"
