@@ -27,7 +27,7 @@ const customStyles = {
 	},
 };
 
-
+Modal.setAppElement('body')
 
 export const AddLanguage = () => {
 	const [isOpen, toggleOpen] = React.useState(false);
