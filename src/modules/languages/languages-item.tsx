@@ -2,6 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch, bindActionCreators } from 'redux';
 import Styled from 'styled-components';
+import { Box } from 'reflexbox';
 import FlagImg from 'react-world-flags';
 import { FiX } from 'react-icons/fi';
 import { LanguageListItem, LanguageAction } from './types';
@@ -69,34 +70,36 @@ export const LanguageItem: React.FC<Props> = (props: Props) => {
     const { language, removeLanguage } = props;
     const { name, code, wordsToDo, progress, unverified } = language;
     return (
-        <Container>
-            <Header>
-                <Flag>
-                    <FlagImg code={code} />
-                </Flag>
-                <Title>{name}</Title>
-                <Remove onClick={() => removeLanguage({ name })} role="remove">
-                    <FiX />
-                </Remove>
-            </Header>
-            <ProgressBar progress={progress} mt="8px" maxHeight="2px">
-                <i />
-            </ProgressBar>
-            <Body>
-                <Info>
-                    <InfoLabel>DONE</InfoLabel>
-                    {progress}%
-                </Info>
-                <Info highlight>
-                    <InfoLabel>WORDS TO DO</InfoLabel>
-                    {wordsToDo}
-                </Info>
-                <Info highlight>
-                    <InfoLabel>UNVERIFIED</InfoLabel>
-                    {unverified}
-                </Info>
-            </Body>
-        </Container>
+        <Box width={[1, 1 / 2, 1 / 3, 1 / 4, 1 / 4]}>
+            <Container>
+                <Header>
+                    <Flag>
+                        <FlagImg code={code} />
+                    </Flag>
+                    <Title>{name}</Title>
+                    <Remove onClick={() => removeLanguage({ name })} role="remove">
+                        <FiX />
+                    </Remove>
+                </Header>
+                <ProgressBar progress={progress} mt="8px" maxHeight="2px">
+                    <i />
+                </ProgressBar>
+                <Body>
+                    <Info>
+                        <InfoLabel>DONE</InfoLabel>
+                        {progress}%
+                    </Info>
+                    <Info highlight>
+                        <InfoLabel>WORDS TO DO</InfoLabel>
+                        {wordsToDo}
+                    </Info>
+                    <Info highlight>
+                        <InfoLabel>UNVERIFIED</InfoLabel>
+                        {unverified}
+                    </Info>
+                </Body>
+            </Container>
+        </Box>
     );
 };
 

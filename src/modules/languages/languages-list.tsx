@@ -2,6 +2,7 @@ import * as React from 'react';
 import Styled from 'styled-components';
 import { connect, ConnectedProps } from 'react-redux';
 import { isEmpty } from 'lodash';
+import { Flex } from 'reflexbox';
 import Language from './languages-item';
 import AddLanguage from './add-language';
 import * as Actions from './actions';
@@ -29,7 +30,7 @@ export const LanguagesList: React.FC<Props> = (props: Props) => {
     );
 };
 
-const Container = Styled.div`
+const Container = Styled(Flex)`
 	display:flex;
 	flex-flow:row wrap;
 	padding:0px 0px 0px 5px;

@@ -85,7 +85,9 @@ export const InfoLabel = Styled.div<BoxProps & { highlight?: boolean }>`
 		letter-spacing:0px;
 `;
 export const Info = Styled.div<BoxProps & { highlight?: boolean }>`
-	flex-basis:30%;
+	flex-basis:33%;
+	flex-grow:1;
+	min-width:33%;
 	display:flex;
 	flex-flow:column wrap;
 	color:${(p): string | undefined => (p.highlight ? '#5489DC' : '#888888')};
