@@ -1,5 +1,5 @@
 import { AnyAction } from 'redux';
-import * as constants from './constants';
+import * as constants from '../constants';
 
 export interface LanguageListItem {
     name: string;
@@ -55,3 +55,6 @@ export type LanguageAction =
     | RemoveLanguageAttemptAction
     | AddLanguageAttemptAction
     | AnyAction;
+
+export * from './svg.types';
+export * from './styled.types';
