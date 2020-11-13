@@ -1,4 +1,5 @@
 import 'react-app-polyfill/ie11';
+import 'react-app-polyfill/stable';
 /* eslint-disable no-use-before-define */
 import React from 'react';
 import ReactDOM from 'react-dom';
