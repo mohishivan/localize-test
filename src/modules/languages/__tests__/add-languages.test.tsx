@@ -12,13 +12,15 @@ jest.mock('react', () => ({
     useState: jest.fn(),
 }));
 
-test('Click on AddLanguage open Modal [test React.useState]', () => {
-    const toggleOpen = jest.fn();
-    const toggleOpenMock: any = (initState: boolean) => [initState, toggleOpen];
+describe('Add Language Button', () => {
+    test('Click on AddLanguage open Modal [test React.useState]', () => {
+        const toggleOpen = jest.fn();
+        const toggleOpenMock: any = (initState: boolean) => [initState, toggleOpen];
 
-    jest.spyOn(React, 'useState').mockImplementation(toggleOpenMock);
+        jest.spyOn(React, 'useState').mockImplementation(toggleOpenMock);
 
-    render(<AddLanguage />, { wrapper });
-    fireEvent.click(screen.getByText(/Add language/i));
-    expect(toggleOpen).toHaveBeenCalledTimes(1);
+        render(<AddLanguage />, { wrapper });
+        fireEvent.click(screen.getByText(/Add language/i));
+        expect(toggleOpen).toHaveBeenCalledTimes(1);
+    });
 });

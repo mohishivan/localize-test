@@ -33,9 +33,10 @@ const selectStyles = {
 const ModalStyles = Styled.div`
 	display:flex;
 	flex-flow:column;
-	h1 {
+	label {
 		margin:5px 0px 20px 0px;
 		font:400 22px Rubik;
+		display:block;
 	}
 `;
 
@@ -46,7 +47,7 @@ const Buttons = Styled.div`
 	margin:30px 0px;
 `;
 
-interface Option {
+export interface Option {
     label: string;
     value: string;
 }
@@ -62,7 +63,7 @@ interface OwnProps {
     closeModal(): void;
 }
 
-type Props = StateProps & DispatchProps & OwnProps;
+export type Props = StateProps & DispatchProps & OwnProps;
 export const AddLanguageForm: FC<Props> = (props: Props) => {
     const { listData, addLanguage, closeModal, options } = props;
     const [selected, select] = useState<LanguageListItem[]>([]);
@@ -83,15 +84,21 @@ export const AddLanguageForm: FC<Props> = (props: Props) => {
 
     return (
         <ModalStyles>
-            <h1>Add languages</h1>
-            <Select
-                closeMenuOnSelect={false}
-                components={animatedComponents}
-                options={options}
-                styles={selectStyles}
-                onChange={(val: any) => selectLanguage(val)}
-                isMulti
-            />
+            <form role="form">
+                <label htmlFor="languages">Add languages</label>
+                <Select
+                    id="languages"
+                    aria-labelledby="languages"
+                    closeMenuOnSelect={false}
+                    components={animatedComponents}
+                    options={options}
+                    styles={selectStyles}
+                    onChange={(val: any) => selectLanguage(val)}
+                    name="languages"
+                    inputId="languages"
+                    isMulti
+                />
+            </form>
             <Buttons>
                 <Button ml="10px" onClick={closeModal}>
                     Close

@@ -7,9 +7,9 @@ import AddLanguage from './add-language';
 import * as Actions from './actions';
 import { AppState } from '../../store';
 
-type Props = ReduxProps;
+export type Props = ReduxProps;
 
-const LanguagesList: React.FC<Props> = (props: Props) => {
+export const LanguagesList: React.FC<Props> = (props: Props) => {
     const { list, listData, fetchLanguages } = props;
 
     React.useEffect(() => {
@@ -42,7 +42,7 @@ const mapState = (state: AppState) => ({
     list: state.languages.list,
 });
 
-const mapDispatch = {
+export const mapDispatch = {
     fetchLanguages: Actions.fetchLanguages,
 };
 

@@ -41,7 +41,7 @@
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "test": "react-scripts test --env=jsdom --verbose --coverage=true",
+        "test": "react-scripts test --env jest-environment-jsdom-fourteen --verbose --coverage=true",
         "eject": "react-scripts eject",
         "lint": "eslint --ext=jsx,ts,tsx src"
     },
@@ -82,6 +82,7 @@
         "eslint-plugin-prettier": "^3.1.4",
         "eslint-plugin-react-hooks": "^4.2.0",
         "prettier": "^2.1.2",
+        "react-select-event": "^5.1.0",
         "stylelint": "^13.0.0",
         "stylelint-config-recommended": "^3.0.0",
         "stylelint-config-styled-components": "^0.1.1",

@@ -9,7 +9,7 @@ import * as Actions from './actions';
 import { ProgressBar, Info, InfoLabel } from './styled';
 import { RemoveLanguageAttemptAction, RemoveLanguagePayload } from './types';
 
-export const Remove = Styled.div`
+export const Remove = Styled.a`
 	opacity:0;
 	display:flex;
 	align-items:center;
@@ -63,9 +63,9 @@ interface DispatchProps {
     // eslint-disable-next-line
     removeLanguage(payload: RemoveLanguagePayload): RemoveLanguageAttemptAction;
 }
-type Props = OwnProps & DispatchProps;
+export type Props = OwnProps & DispatchProps;
 
-const LanguageItem: React.FC<Props> = (props: Props) => {
+export const LanguageItem: React.FC<Props> = (props: Props) => {
     const { language, removeLanguage } = props;
     const { name, code, wordsToDo, progress, unverified } = language;
     return (
@@ -75,7 +75,7 @@ const LanguageItem: React.FC<Props> = (props: Props) => {
                     <FlagImg code={code} />
                 </Flag>
                 <Title>{name}</Title>
-                <Remove onClick={() => removeLanguage({ name })}>
+                <Remove onClick={() => removeLanguage({ name })} role="remove">
                     <FiX />
                 </Remove>
             </Header>
