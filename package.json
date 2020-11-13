@@ -22,6 +22,7 @@
         "localforage": "^1.9.0",
         "lodash": "^4.17.20",
         "react": "^16.12.0",
+        "react-app-polyfill": "^2.0.0",
         "react-dom": "^16.12.0",
         "react-icons": "^3.11.0",
         "react-modal": "^3.11.2",
@@ -54,8 +55,10 @@
             "@typescript-eslint/explicit-function-return-type": 0,
             "no-use-before-define": 0,
             "@typescript-eslint/no-use-before-define": 0,
-						"no-unused-vars": 0,
-						"@typescript-eslint/no-unused-vars": ["error"]
+            "no-unused-vars": 0,
+            "@typescript-eslint/no-unused-vars": [
+                "error"
+            ]
         }
     },
     "browserslist": {
@@ -74,10 +77,10 @@
         "@typescript-eslint/eslint-plugin": "^4.7.0",
         "@typescript-eslint/parser": "^4.7.0",
         "eslint": "^6.8.0",
+        "eslint-config-airbnb-typescript": "^12.0.0",
         "eslint-config-prettier": "^6.15.0",
         "eslint-plugin-prettier": "^3.1.4",
         "eslint-plugin-react-hooks": "^4.2.0",
-        "eslint-config-airbnb-typescript": "^12.0.0",
         "prettier": "^2.1.2",
         "stylelint": "^13.0.0",
         "stylelint-config-recommended": "^3.0.0",
