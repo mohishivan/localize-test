@@ -10,9 +10,9 @@ import { Button, ButtonIcons } from './styled';
 export const LanguagePage: React.FC = () => {
     return (
         <Container>
-            <Box mt={['10px', '40px', '70px', '100px']} mx={['10px', '40px', '70px', '100px']}>
+            <Box mt={['10px', '40px', '70px', '90px']} mx={['10px', '40px', '50px', '55px']}>
                 <Buttons>
-                    <Button py="7px" mx="3px" mt="3px" ml="0px" px="10px" className="primary">
+                    <Button py="0px" mx="3px" mt="3px" ml="0px" px="10px" className="primary">
                         <span>New Project</span>
                         <ButtonIcons ml="6px" fontSize="12px">
                             <ImShift />
@@ -20,10 +20,10 @@ export const LanguagePage: React.FC = () => {
                             <b>P</b>
                         </ButtonIcons>
                     </Button>
-                    <Button py="6px" px="14px" mx="2px" mt="4px">
+                    <Button py="0px" px="14px" mx="2px" mt="4px">
                         <span>Expand all</span>
                     </Button>
-                    <Button py="6px" px="14px" mx="2px" mt="4px">
+                    <Button py="0px" px="14px" mx="2px" mt="4px">
                         <span>Collapse all</span>
                     </Button>
                 </Buttons>
@@ -51,7 +51,7 @@ const Panel = Styled(Flex)`
 `;
 const Buttons = Styled.div`
 	flex-basis:100%;
-	height:40px;
+	height:32px;
 	display:flex;
 	flex-flow:row wrap;
 `;
