@@ -1,5 +1,4 @@
 import React from 'react';
-// @ts-expect-error fireEvent and screen not exported error due to modules dependencies imcompatibility
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { store } from '../../../store';

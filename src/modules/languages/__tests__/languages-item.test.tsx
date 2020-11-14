@@ -1,10 +1,9 @@
 import React from 'react';
-// @ts-expect-error fireEvent and screen not exported error due to modules dependencies imcompatibility
 import { render, fireEvent } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { store } from '../../../store';
 import * as Actions from '../actions';
-import { RemoveLanguageAttemptAction } from '../types';
+import { RemoveLanguageAttemptAction, RemoveLanguagePayload } from '../types';
 import { LanguageItem, Props } from '../languages-item';
 import { listData } from '../fixtures';
 
@@ -14,8 +13,8 @@ describe('Languages Item', () => {
     let removeLanguage: any;
     beforeEach(() => {
         removeLanguage = jest.fn(
-            (): RemoveLanguageAttemptAction => {
-                return Actions.removeLanguage();
+            (payload: RemoveLanguagePayload): RemoveLanguageAttemptAction => {
+                return Actions.removeLanguage(payload);
             },
         );
     });
