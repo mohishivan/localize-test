@@ -47,20 +47,41 @@
         "eject": "react-scripts eject",
         "lint": "eslint --ext=jsx,ts,tsx src"
     },
+    "majestic": {
+        "args": [
+            "--env=jest-environment-jsdom-fourteen --verbose --coverage=true --watchAll=false"
+        ],
+        "env": {
+            "CI": "true"
+        }
+    },
     "eslintConfig": {
-        "extends": ["react-app", "airbnb-typescript"],
+        "extends": [
+            "react-app",
+            "airbnb-typescript"
+        ],
         "rules": {
             "@typescript-eslint/no-explicit-any": 1,
             "@typescript-eslint/explicit-function-return-type": 0,
             "no-use-before-define": 0,
             "@typescript-eslint/no-use-before-define": 0,
             "no-unused-vars": 0,
-            "@typescript-eslint/no-unused-vars": ["error"]
+            "@typescript-eslint/no-unused-vars": [
+                "error"
+            ]
         }
     },
     "browserslist": {
-        "production": [">0.2%", "not dead", "not op_mini all"],
-        "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
     },
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "^4.7.0",
@@ -70,6 +91,7 @@
         "eslint-config-prettier": "^6.15.0",
         "eslint-plugin-prettier": "^3.1.4",
         "eslint-plugin-react-hooks": "^4.2.0",
+        "majestic": "^1.8.0",
         "prettier": "^2.1.2",
         "react-select-event": "^5.1.0",
         "stylelint": "^13.0.0",
